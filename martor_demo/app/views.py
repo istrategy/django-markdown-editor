@@ -52,5 +52,6 @@ def test_markdownify(request):
 
 def testvars(request):
 
-    print(settings.MEDIA_ROOT)
-    return HttpResponse("testvars")
+    tvar = settings.MEDIA_ROOT
+    tvar += "<br>" +settings.STATIC_ROOT
+    return HttpResponse(tvar)
