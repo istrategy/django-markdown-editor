@@ -5,6 +5,8 @@ from django.contrib import messages
 
 from app.forms import SimpleForm, PostForm
 from app.models import Post
+from django.http import HttpResponse
+from django.conf import settings
 
 
 def home_redirect_view(request):
@@ -47,3 +49,8 @@ def test_markdownify(request):
         }
     theme = getattr(settings, "MARTOR_THEME", "bootstrap")
     return render(request, "%s/test_markdownify.html" % theme, context)
+
+def testvars(request):
+
+    print(settings.MEDIA_ROOT)
+    return HttpResponse("testvars")
