@@ -31,7 +31,7 @@ blocks:
       jobs:
         - name: Unit tests
           commands:
-            - cd martor_demo
+            - '# cd martor_demo'
             - python manage.py check --deploy
         - name: Checklist
           commands: []
